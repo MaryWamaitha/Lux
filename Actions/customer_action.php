@@ -20,6 +20,27 @@ if(isset($_GET['updateCustomer'])){
         } 
        
      }
+
+ if(isset($_POST['updateCustomer'])){
+        // retrieve the details from the form submission
+        $Fname= $_POST['Fname'];
+        $Lname= $_POST['Lname'];
+        $email= $_POST['email'];
+        $contact= $_POST['contact'];
+        $pass= $_POST['password'];
+        $password = password_hash($pass, PASSWORD_DEFAULT);
+        $id=$_SESSION["ID"];
+        //Updates the customer details
+            $result = update_customer_controller($id,$Fname, $Lname, $email,$contact,$password);
+            //If this is successful, it redirects back to the checkout page
+            if($result === true){
+            header("Location: ../view/user.php");
+            //if the update did not happen successfully, it redirects back to the admin page and shows an error
+            }else {
+                header("Location: ../view/user.php?error=0");
+            } 
+           
+         }
        
         
 

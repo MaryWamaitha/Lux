@@ -6,10 +6,10 @@ require('../Settings/connection.php');
 class Cart extends Connection{
 
 //adds to cart when not logged in
-	function add_to_cart($p_id,$qty,$ip_add,$details,$size){
-		// return true or false
-		return $this->query("insert into cart(p_id,qty,ip_add,details,size) values('$p_id','$qty','$ip_add','$details','$size')");
-	}
+function add_to_cart($p_id,$qty,$ip_add,$details,$size){
+	// return true or false
+	return $this->query("insert into cart(p_id,qty,ip_add,details,size) values('$p_id','$qty','$ip_add','$details','$size')");
+}
 
 //Adds to cart when logged in
 function quick_add($p_id,$ip_add,$qty){

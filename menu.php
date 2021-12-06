@@ -107,7 +107,7 @@
              
               
               <!-- USER BASKET -->
-              <li class="dropdown user-basket"> <a href="cart.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i> </a>
+              <li class="dropdown user-basket"> <a href="view/cart.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i> </a>
                 <ul class="dropdown-menu">
                   <li>
                    

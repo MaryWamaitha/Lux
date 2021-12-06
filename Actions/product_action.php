@@ -60,11 +60,12 @@ if(isset($_POST['saveproduct'])){
                                 } else {
                                     header("Location: ../admin/dashboard/add_products.php?error=4");
                                 }
-                                }
-                            }
-                    } 
+                        }
+                    }
+                 } 
             }
- }       }
+        }      
+    }
 
 
 
@@ -88,7 +89,7 @@ if(isset($_GET['deleteProductID'])){
     $result = delete_product_controller($id);
 
     if($result === true) header("Location: ../admin/dashboard/view_products.php");
-    else echo "deletion failed";
+    else header("Location: ../admin/dashboard/view_products.php?error=1");
 
 
 }
@@ -163,14 +164,14 @@ if(isset($_POST['editproduct'])){
                                 } else {
                                     header("Location: ../admin/dashboard/edit_product.php?error=4");
                                 }
-                                }
                             }
-                        } 
+                         }
+                    } 
                 }
-        }     
-     }
+            }     
+         }
                                   
-}
+    }
 
 if(isset($_GET['deleteImageID'])){
     $id = $_GET['deleteImageID'];

@@ -92,7 +92,7 @@ $products = select_all_products_controller();
               <span>My profile</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="../logout.php" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -106,7 +106,7 @@ $products = select_all_products_controller();
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="../index.html">
-                <img src="../assets/img/brand/blue.png">
+                <img src="../../images/logo5.png">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -181,12 +181,12 @@ $products = select_all_products_controller();
         <ul class="navbar-nav align-items-center d-none d-md-flex">
           <li class="nav-item dropdown">
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div class="media align-items-center">
+            <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="../assets/img/theme/team-4-800x800.jpg">
+                  <img alt="Image placeholder" src="../../images/logo5.png">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                  <span class="mb-0 text-sm  font-weight-bold">Lux Art Admin Panel</span>
                 </div>
               </div>
             </a>
@@ -245,7 +245,12 @@ $products = select_all_products_controller();
         <div class="col">
           <div class="card bg-default shadow">
             <div class="card-header bg-transparent border-0">
-              <h3 class="text-white mb-0">Card tables</h3>
+            <?php
+                    if (isset($_GET["error"]) && $_GET["error"]==1)
+                            echo ' <div class="alert alert-danger" role="alert"> The deletion was not succesful. Please try again</div>' ;
+                
+                    ?>
+              <h3 class="text-white mb-0">product Table</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-dark table-flush">
@@ -312,34 +317,7 @@ $products = select_all_products_controller();
             </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
-          </div>
-          <div class="col-xl-6">
-            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+       </div>
     </div>
   </div>
  <!--   Core   -->

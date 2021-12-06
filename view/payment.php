@@ -4,14 +4,14 @@ session_start();
 if (isset($_SESSION['ID'] )) {
   if (isset($_POST['order'] )){
     $cost = $_POST['amount'];
-    $type = $_POST['radio'];
+    $payment = $_POST['radio'];
     require('../Controllers/cart_controller.php');
     require('../Classes/product_functions.php');
     $custID=$_SESSION["ID"];
     $cart=select_cart_by_cid_controller($custID);
-    if ($type=='delivery'){
-      header("Location: ../Actions/payment_action.php?type='delivery'&amount=$cost");
-      } elseif($type=='half'){
+    if ($payment=='delivery'){
+      header("Location: ../Actions/payment_action.php?payment='delivery'&amount=$cost");
+      } elseif($payment=='half'){
         $sum=$cost/2;
       } else {
         $sum=$cost;
@@ -107,8 +107,7 @@ if (isset($_SESSION['ID'] )) {
                     $email=$_SESSION['email'];
                     $qty=$x['qty'];
                     $item_total=item_total($price,$qty);
-                    $size=$x['size'];
-
+                   
                     echo " <p>$item_name <span> Ksh $item_total </span> </p> "; }
 
                     echo "
@@ -124,6 +123,7 @@ if (isset($_SESSION['ID'] )) {
                                       <input class='form-control' type='hidden'  name='total' id='total' value= $sum >
                                       <input class='form-control' type='hidden'  name='qty' id ='qty' value= $qty >
                                       <input class='form-control' type='hidden'  name='pid' id='pid' value=  $pid >
+                                      <input class='form-control' type='hidden'  name='payment' id ='payment' value= $payment >
                                       
                                         <button class='btn  btn-dark pull-right margin-top-30' type='submit' onclick='payWithPaystack()' > Pay</button></div>
                                         </form>"; ?>
@@ -133,7 +133,6 @@ if (isset($_SESSION['ID'] )) {
                                          echo ' <div class="alert alert-danger" role="alert">Payment was  not successfully recorded, if any deductions were made, we will be in touch soon with the refund<br></div>' ;
                                      if (isset($_GET["error"]) && $_GET["error"]==1)
                                          echo ' <div class="alert alert-danger" role="alert">The payment was not successfully verified, if deductions were made, we will refund<br></div>' ;
- 
                                      if (isset($_GET["error"]) && $_GET["error"]==2)
                                          echo ' <div class="alert alert-danger" role="alert">Payment was  not successfully noted, if any deductions were made, we will be in touch soon with the refund<br></div>' ;
                                      if (isset($_GET["error"]) && $_GET["error"]==0)
@@ -180,6 +179,7 @@ if (isset($_SESSION['ID'] )) {
 			key: 'pk_test_5f8db00757a50340ea680b289aeb5beb88d52aff', // Replace with your public key
       email: document.getElementById("email").value,
       qty: document.getElementById("qty").value,
+      payment: document.getElementById("payment").value,
       pid: document.getElementById("pid").value,
 	    amount: document.getElementById("total").value * 100,
 			currency:'GHS',
@@ -188,7 +188,7 @@ if (isset($_SESSION['ID'] )) {
 			},
 			//sent email
 			callback: function(response){
-        window.location = `../Actions/payment_action.php?email=${document.getElementById("email").value}&amount=${document.getElementById("total").value}&reference=${response.reference}&date=${response.transaction_date}&currency=${response.currency}`
+        window.location = `../Actions/payment_action.php?email=${document.getElementById("email").value}&amount=${document.getElementById("total").value}&reference=${response.reference}&date=${response.transaction_date}&currency=${response.currency}&payment=${document.getElementById("payment").value}`
 			}
 		});
 		handler.openIframe();

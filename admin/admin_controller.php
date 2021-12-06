@@ -6,47 +6,47 @@ require('admin_class.php');
 
 function select_all_orders_controller(){
     // create an instance of the admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_all_orders();
+    return $admin_instance->select_all_orders();
 
 }
 
 function select_count_orders_controller(){
     // create an instance of the admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_count_orders();
+    return $admin_instance->select_count_orders();
 
 }
 
 function select_count_categories_controller(){
     // create an instance of the admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_count_categories();
+    return $admin_instance->select_count_categories();
 
 }
 
 function select_count_customers_controller(){
     // create an instance of the admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_count_customers();
+    return $admin_instance->select_count_customers();
 
 }
 function select_count_sales_controller(){
     // create an instance of the admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_count_sales();
+    return $admin_instance->select_count_sales();
 
 }
 function select_count_products_controller(){
     // create an instance of the admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_count_products();
+    return $admin_instance->select_count_products();
 
 }
 
@@ -54,56 +54,27 @@ function select_count_products_controller(){
 
 function select_one_order_controller($order_id){
     // create an instance of the Product class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->select_one_order($order_id);
+    return $admin_instance->select_one_order($order_id);
 
 }
 
-function update_orderstatus_controller($order_id, $customer_id, $invoice_no, $order_date, $order_status){
+function update_orderstatus_controller($order_id,$order_status){
     // create an instance of the Admin class
-    $customer_instance = new Admin();
+    $admin_instance = new Admin();
     // call the method from the class
-    return $customer_instance->update_product_status($order_id, $customer_id, $invoice_no, $order_date, $order_status);
+    return $admin_instance->update_product_status($order_id,$order_status);
 
 }
 
-function add_brand_controller($brand){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
+function delete_order_controller($id){
+    // create an instance of the product class
+    $product_instance = new Admin();
     // call the method from the class
-    return $brand_instance->add_brand($brand);
+    return $product_instance->delete_one_order($id);
 
 }
-
-function select_brand_details_controller($brand){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->select_brand_details($brand);
-    }
-function select_all_brands_controller(){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->select_all_brands();
-    }
-function update_brand_controller($brand_id, $brand_name){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->update_one_brand($brand_id, $brand_name);
-    }
- function select_one_brand_controller($brand_id){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->select_one_brand($brand_id);
-
-
-}
-
-
 
 
 //Category

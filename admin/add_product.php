@@ -1,7 +1,6 @@
 <?php
 require('../Controllers/product_controller.php');
 $categories = select_all_categories_controller();
-$brands = select_all_brands_controller();
 
 session_start(); 
 

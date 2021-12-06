@@ -62,7 +62,7 @@ if(isset($_GET['deleteCategoryID'])){
     $result =  delete_category_controller($id);
 
     if($result === true) header("Location: ../admin/dashboard/view_category.php");
-    else echo "deletion failed";
+    else header("Location: ../admin/dashboard/view_category.php?error=1");
 
 
 }

@@ -18,11 +18,12 @@ function delete_customer_controller($id){
 
 }
 
-function update_customer_controller($id, $name, $description, $qty){
+
+function update_customer_controller( $id,$Fname, $Lname, $email,$contact,$passwordy){
     // create an instance of the customer class
     $customer_instance = new Customer();
     // call the method from the class
-    return $customer_instance->update_one_customer($id, $name, $description, $qty);
+    return $customer_instance->update_one_customer( $id,$Fname, $Lname, $email,$contact,$password);
 
 }
 

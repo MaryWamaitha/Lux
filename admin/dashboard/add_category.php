@@ -56,7 +56,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="./index.php">
-                <img src="./assets/img/brand/blue.png">
+                <img src="../../images/logo5.png">
               </a>
             </div>
             <div class="col-6 collapse-close">

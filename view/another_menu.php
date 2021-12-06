@@ -79,7 +79,7 @@
            <!-- NAV -->
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
-              <li > <a href="../index.php">Home</a></li>
+              <li > <a href="index.php">Home</a></li>
               <li> <a href="about.php">About </a> </li>
               <li> <a href="view/shop.php">Shop </a> </li>
               <li> <a href="view/contact.php"> contact</a> </li>

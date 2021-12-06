@@ -93,13 +93,13 @@
               <li class="dropdown user-acc"> <a href="user.php" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class='fas fa-user-circle'> </i>  </a>
                 <ul class="dropdown-menu">
                   <li><a href="view/cart.php">MY CART</a></li>
-                  <li><a href="user.php">ACCOUNT INFO</a></li>
+                  <li><a href="view/user.php">ACCOUNT INFO</a></li>
                   <li><a href="Actions/logout.php">LOG OUT</a></li>
                 </ul>
              
                 <li><p><?php echo $_SESSION["name"]; ?> </p> </li>
               <!-- USER BASKET -->
-              <li class="dropdown user-basket"> <a href="cart.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i> </a>
+              <li class="dropdown user-basket"> <a href="view/cart.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i> </a>
                 <ul class="dropdown-menu">
                   <li>
                    

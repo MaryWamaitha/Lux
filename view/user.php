@@ -1,4 +1,12 @@
 <?php session_start() ?>
+<?php 
+
+if (isset($_SESSION['ID'] )) {
+  require('../Controllers/customer_controller.php');
+  require('../Classes/product_functions.php');
+  $custID=$_SESSION["ID"];
+  $customer= select_one_customer_controller($custID);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,8 +82,12 @@
 <body>
 
 <?php 
-  include_once('loginmenu.php');
-  ?>
+    if (isset($_SESSION['ID'] )) {
+        include_once 'menu.php';
+    } else {
+        include_once 'another_menu.php';
+    }
+    ?>
     <!--======= PAGES INNER =========-->
     <section class="chart-page padding-top-100 padding-bottom-100">
       <div class="container"> 
@@ -89,42 +101,46 @@
               
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-12">
-                <h6>Please Register</h6>
-                <p> This makes it easier the next time you are buying something
-                  <br> * indicates required fields
+                <h6>Want to change any of your details?</h6>
+                <p> Edit them below and we will change them in our system
+                
                 </p>
 
-                <form action="../Actions/register_process.php" method="post">
+                <form action="../Actions/customer_action.php" method="post">
                   <ul class="row">
                     
                     <!-- Name -->
                     <li class="col-md-6">
-                      <label> *FIRST NAME
-                        <input type="text" name="fname" value="" placeholder="" required>
+                      <label> FIRST NAME
+                        <input type="text" name="Fname" placeholder="" value="<?php echo $customer['customer_Fname'];?>" >
                       </label>
                     </li>
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *LAST NAME
-                        <input type="text" name="lname" value="" placeholder="" required>
+                      <label>LAST NAME
+                        <input type="text" name="Lname" placeholder="" value="<?php echo $customer['customer_Lname'];?>" >
                       </label>
                     </li>
                     
                     <!-- EMAIL ADDRESS -->
                     <li class="col-md-6">
                       <label> *EMAIL ADDRESS
-                        <input type="email" name="email" id="email"   placeholder="Enter a valid email" required pattern= "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/" title="Email must be in the required pattern">
+                        <input type="email" name="email" id="email" value="<?php echo $customer['customer_email']?>"  placeholder="Enter a valid email" required pattern= "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/" title="Email must be in the required pattern">
                       </label>
                       <div id="emailmessage">
                         <p><b>Email must be of the following pattern</b></p>
                         <p id="pattern" class="invalid"><b>name@gmail.com</b> </p>
                     </div>
                     </li>
-                    
+                    <li class="col-md-6">
+                      <label> CONTACT
+                        <input type="tel" name="contact" id="contact"   placeholder="Enter a valid phone" value="<?php echo $customer['customer_contact']?>" required>
+                      </label>
+                    </li>
                     <!-- Password -->
                     <li class="col-md-6">
                       <label> *PASSWORD
-                      <input type="password" name="password" value="" id="password" placeholder="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                      <input type="password" name="password" value="<?php echo $customer['customer_pass']?>" id="password" placeholder="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                       </label>
                       <div id="pswdmessage">
                         <p><b>Password must contain the following:</b></p>
@@ -136,9 +152,9 @@
                     </li>
                   
                     <!-- Verify password -->
-                    <li class="col-md-6">
+                     <li class="col-md-6">
                       <label> *ENTER PASSWORD AGAIN
-                        <input type="password" name="vpswd" value="" id="vpswd" placeholder="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <input type="password" name="vpswd" value="<?php echo $customer['customer_pass']?>" id="vpswd" placeholder="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                       </label>
                       <div id="vpswdmessage">
                         <p id="vpassword" class="invalid"><b>Password must be the same as the previously entered password</b></p>
@@ -146,19 +162,18 @@
                     </div>
                     </li>
                     
+                    
                     <!-- PHONE -->
                     <li class="col-md-6">
-                      <button type="submit" class="btn" name="register">REGISTER</button>
+                      <button type="submit" class="btn" name="updateCustomer">UPDATE</button>
                     </li>
                   </ul>
                 </form>
                 <?php
-                    if (isset($_GET["error"]) && $_GET["error"]==1)
-   							        echo ' <div class="alert alert-danger" role="alert"> Password entered do not match</div>' ;
+                    
                     if (isset($_GET["error"]) && $_GET["error"]==0)
-   							        echo ' <div class="alert alert-danger" role="alert">Registration was unsucesssful. Try again later</div>' ;
-                    if (isset($_GET["error"]) && $_GET["error"]==3)
-                          echo ' <div class="alert alert-danger" role="alert">Email already exists in the system, please log in <br></div>' ;
+   							        echo ' <div class="alert alert-danger" role="alert">Update  was unsucesssful. Try again later</div>' ;
+                    
                     ?>
               </div>
             </div>
@@ -300,3 +315,9 @@ email.onkeyup = function() {
 </script>
 </body>
 </html>
+
+<?php
+} else {
+  header("Location:login.php");
+}
+?>

@@ -57,7 +57,7 @@ $stocks = select_count_products_controller();
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="index.php">
-        <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <img src="../../images/logo5.png" class="navbar-brand-img" alt="...">
       </a>
       
       <!-- Collapse -->
@@ -130,8 +130,39 @@ $stocks = select_count_products_controller();
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.php">Dashboard</a>
-        
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Categories</a>
+        <!-- Form -->
+       
+        <!-- User -->
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+          <li class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                <span class="avatar avatar-sm rounded-circle">
+                  <img alt="Image placeholder" src="../../images/logo5.png">
+                </span>
+                <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold">Lux Art Admin Panel</span>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+              <div class=" dropdown-header noti-title">
+                <h6 class="text-overflow m-0">Welcome!</h6>
+              </div>
+              <a href="../examples/profile.html" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>My profile</span>
+              </a>
+              
+              <div class="dropdown-divider"></div>
+              <a href="../logout.php" class="dropdown-item">
+                <i class="ni ni-user-run"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -206,10 +237,9 @@ $stocks = select_count_products_controller();
                     <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white rounded-circle shadow">
                       <i class="fas fa-chart-bar"></i>
-                      </div>
+                    </div>
                     </div>
                   </div>
-                 
                 </div>
               </div>
             </div>
@@ -218,88 +248,112 @@ $stocks = select_count_products_controller();
       </div>
     </div>
     <div class="container-fluid mt--7">
-      <div class="row">
-        <div class="col-xl-8 mb-5 mb-xl-0">
-          
-        </div>
-      </div>
+      <!-- Dark table -->
       <div class="row mt-5">
-        <div class="col-xl-8 mb-5 mb-xl-0">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Orders</h3>
-                </div>
+        <div class="col">
+          <div class="card bg-default shadow">
+            <div class="card-header bg-transparent border-0">
+            <?php
+                    if (isset($_GET["error"]) && $_GET["error"]==1)
+                            echo ' <div class="alert alert-danger" role="alert"> The deletion was not succesful. Please try again</div>' ;
                 
-              </div>
+                    ?>
+              <h3 class="text-white mb-0">Order Table</h3>
             </div>
             <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
+              <table class="table align-items-center table-dark table-flush">
+                <thead class="thead-dark">
                   <tr>
-                  <th>Order ID</th>
-                    <th>Customer Name</th>
-                    <th>Customer Email</th>
-                   <th>Invoice No</th>
-                  <th>Order Date</th>
-                  <th>Status</th>
-                  <th>Update Order Status</th>
-
+                    <th scope="col">invoice No</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Customer Email</th>
+                    <th scope="col">Customer Contact</th>
+                    <th scope="col">Painting Name</th>
+                    <th scope="col">Painting Size</th>
+                    <th scope="col">Order Status</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                
                 <?php
-			foreach($purchases as $x){
-				echo 
-				"
-				<tr>
-					<td>{$x['order_id']}</td>
-					<td>{$x['customer_Fname']} {$x['customer_Lname']} </td>
-          <td>{$x['customer_email']}  </td>
-					<td>{$x['invoice_no']}</td>
-          <td>{$x['order_date']}</td>
-          <td>{$x['order_status']}</td>
-          <td><a href='../edit_status.php?updateStatusID={$x['order_id']}'>Update</a></td>
-          
-					
-				</tr>
-				";
-			}
-
-			?>
+		              	foreach($purchases as $x){
+											$invoice_no = $x['invoice_no'];
+                      $order_id = $x['order_id'];
+                      $customer_name = $x['customer_Fname'];
+                      $customer_email = $x['customer_email'];
+                      $customer_contact= $x['customer_contact'];
+                      $pid=$x['product_id'];
+                      $productdetails=select_one_product_controller($pid);
+                      $name= $productdetails['product_name'];
+                      $size= $x['size'];
+                      if ($size==1){
+                        $price=1500;
+                        $type='25*18';
+                      }
+                      elseif ($size==2){
+                        $price=4000;
+                        $type='36*24';
+                      }
+                      else{
+                        $price=10000;
+                        $type='4*3';
+                      }
+                      $status= $x['order_status'];
+                      ?>
+                      <tr>
+                    <td>
+                      <?php echo $invoice_no;?>
+                    </td>
+                    <td>
+                      <?php echo $customer_name;?>
+                    </td>
+                    <td>
+                      <?php echo $customer_email;?>
+                    </td>
+                    <td>
+                      <?php echo $customer_contact;?>
+                    </td>
+                    <td>
+                      <?php echo $name;?>
+                    </td>
+                    <td>
+                      <?php echo $type;?>
+                    </td>
+                    <form action= "status_action.php" method ="get">
+                    <td>
+                      <?php echo $status;?>
+                    </td>
+                    <td>
+                    <input class='form-control' type='hidden'  name='order_id' id='order_id' value=<?php echo $x['order_id']; ?> >
+                    <label for="status">Status</label>
+                        <select name="status" id="status" class="custom-select">
+                        <option value="Half Paid">Half Paid</option> 
+                        <option value="Fully Paid">Full paid</option>      
+                        <option value="Started">Started</option>       
+                        <option value="Completed">Completed</option>
+                        <option value="Delivered">Delivered</option>
+                  </select>
+                    </td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <button class="dropdown-item" name="editorder"> Update</button>
+                          <a class="dropdown-item" href="admin_action.php?deleteOrderID=<?php echo $order_id;?>">Delete</a>
+                        </div>
+                      </div>
+                    </td>
+                    </form>
+                  </tr>
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <br><br><br>
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Perfect Gift</a>
-            </div>
-          </div>
-          <div class="col-xl-6">
-            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">The Perfect Gift</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </footer>
+       </div>
     </div>
   </div>
   <!--   Core   -->

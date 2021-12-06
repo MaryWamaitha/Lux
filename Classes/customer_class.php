@@ -16,9 +16,9 @@ class Customer extends Connection{
 		return $this->query("delete from customer where customer_id = '$id'");
 	}
 
-	function update_one_customer($name, $email,$password, $country, $city,$contact){
+	function update_one_customer($id,$Fname, $Lname, $email,$contact,$password){
 		// return true or false
-		return $this->query("update customer set customer_name='$name', customer_email='$email',customer_pass ='$password',customer_country='$country',customer_city='$city',  customer_contact='$contact' where customer_id = '$id'");
+		return $this->query("update customers set customer_Fname='$Fname', customer_Lname='$Lname', customer_email='$email',customer_pass ='$password', customer_contact='$contact' where customer_id = '$id'");
 	}
 
 	function update_details($id,$Fname, $Lname, $email,$contact){

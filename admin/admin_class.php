@@ -4,13 +4,12 @@ require('../../Settings/connection.php');
 
 // inherit the methods from Connection
 class Admin extends Connection{
-
-
 	
 	function select_all_orders(){
 		// return array or false
-		return $this->fetch("select * from orders inner join customers on orders.customer_id=customers.customer_id");
+		return $this->fetch("select * from orders inner join customers on orders.customer_id=customers.customer_id join orderdetails on orders.order_id=orderdetails.order_id");
 	}
+
 	function select_count_orders(){
 		// return array or false
 		return $this->fetchOne("select count(order_id) as number from orders");
@@ -39,10 +38,16 @@ class Admin extends Connection{
 		return $this->fetchOne("select * from orders where order_id='$order_id'");
 	}
 
-	function update_product_status($order_id, $customer_id, $invoice_no, $order_date, $order_status){
+	function update_product_status($order_id, $order_status){
 		// return true or false
 		return $this->query("update orders set order_status='$order_status' where order_id = '$order_id'");
 	}
+
+	function delete_one_order($id){
+		// return true or false
+			return $this->query("delete from orders where order_id = '$id'");
+	}
+
 	
 }
 	
@@ -135,36 +140,6 @@ class Product extends Connection{
 
 	
 	
-class Brand extends Connection{
-	
-	
-		function add_brand($brand){
-			// return true or false
-			return $this->query("insert into brand(brand_name) values('$brand')");
-		}
-	
-		function select_brand_details($brand){
-			// return associative array or false
-			return $this->fetchOne("select * from brand where brand_name='$brand'");
-		}
-		function select_all_brands(){
-			// return array or false
-			return $this->fetch("select * from brand");
-		}
-		function update_one_brand($brand_id,$brand_name){
-			// return true or false
-			return $this->query("update brand  set brand_id='$brand_id', brand_name='$brand_name' where brand_id = '$brand_id'");
-		}
-		function select_one_brand($brand_id){
-			// return associative array or false
-			return $this->fetchOne("select * from brand where brand_id='$brand_id' ");
-		}
-		//deleting brand
-		function delete_brand($brand_id){
-			// return true or false
-			return $this->query("delete from brand where brand_id = '$brand_id'");
-		}
-	}
 	
 class Category extends Connection{
 	

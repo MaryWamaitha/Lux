@@ -2,7 +2,7 @@
 session_start();
 
 require('../Controllers/cart_controller.php');
-if (isset($_GET['type'])){
+if (isset($_GET['payment'])&($_GET['payment']=='delivery')){
     // get form values
     $custID=$_SESSION["ID"];
     $invoice_no = floor(mt_rand(100, 1000));
@@ -69,7 +69,13 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
     $date= date("Y-m-d");
     $custID=$_SESSION["ID"];
     $invoice_no = floor(mt_rand(100, 1000));
-    $status = 'Half Paid';
+    $payment = $_GET['payment'];
+    if ($payment=='half'){
+        $status = 'Half Paid';
+    } else {
+        $status = 'Fully Paid';
+    }
+   
     //inserts the order into the order table
     $add_order = add_order_controller($custID,$invoice_no,$date,$status,$amt);
     //call controller function to insert into database
@@ -77,7 +83,8 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
         //get current item from orders
         $recent_order = get_last_order_controller();
         $cart = select_cart_by_CID_controller($custID);
-        foreach($cart as $x){
+        
+       foreach($cart as $x){
             $add_OrderDetails = add_order_details_controller($recent_order['currentOrder'],$x['p_id'],$x['qty'],$x['details'],$x['size']);
         }
 
@@ -102,7 +109,7 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
 
 
     } else{
-        header("Location: ../view/payment.php?error=1");;
+        header("Location: ../view/payment.php?error=1");
     }
 
 }

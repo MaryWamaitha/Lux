@@ -25,7 +25,6 @@ $customers = select_count_customers_controller();
 $sales = select_count_sales_controller();
 $stocks = select_count_products_controller(); 
 $categories = select_all_categories_controller();
-$brands = select_all_brands_controller();
 
 session_start(); 
 
