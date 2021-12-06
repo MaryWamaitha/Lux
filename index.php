@@ -12,7 +12,7 @@ $products=array_slice($productsinitial,0,6);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>ux Jade Collection</title>
+    <title>Lux Jade Collection</title>
     
     <meta name="description" content="N.Agency - Responisve Landing Page for Agency">
     <meta name="keywords" content="">
@@ -80,7 +80,7 @@ $products=array_slice($productsinitial,0,6);
 
     
      <!-- Start Intro -->
-     <section class="parallax-bg" style="background-image:url(images/elephantmain.jpeg)" data-stellar-background-ratio="0.5">
+    <section class="parallax-bg" style="background-image:url(images/elephantmain.jpeg)" data-stellar-background-ratio="0.5">
     <!-- Section Title -->
         <div class="js-height-full container">
             <div class="intro-content white-color text-center vertical-section">

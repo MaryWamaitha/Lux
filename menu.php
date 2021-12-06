@@ -27,7 +27,7 @@
 <script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
 
 <!-- JavaScripts -->
-<script src="JS/Template/modernizr.js"></script>
+<script src="js/Template/modernizr.js"></script>
 
 <!-- Online Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -149,16 +149,16 @@
   
   
 
-  <script src="JS/Template/jquery-1.11.3.min.js"></script> 
-<script src="JS/Template/bootstrap.min.js"></script> 
-<script src="JS/Template/own-menu.js"></script> 
-<script src="JS/Template/jquery.lighter.js"></script> 
-<script src="JS/Template/owl.carousel.min.js"></script> 
+  <script src="js/Template/jquery-1.11.3.min.js"></script> 
+<script src="js/Template/bootstrap.min.js"></script> 
+<script src="js/Template/own-menu.js"></script> 
+<script src="js/Template/jquery.lighter.js"></script> 
+<script src="js/Template/owl.carousel.min.js"></script> 
 
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
 <script type="text/javascript" src="menu/rs-plugin/js/jquery.tp.t.min.js"></script> 
 <script type="text/javascript" src="menu/rs-plugin/js/jquery.tp.min.js"></script> 
-<script src="JS/Template/main.js"></script> 
-<script src="JS/Template/main.js"></script>
+<script src="js/Template/main.js"></script> 
+<script src="js/Template/main.js"></script>
 </body>
 </html>
