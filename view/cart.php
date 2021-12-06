@@ -15,10 +15,10 @@ session_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+<title>Lux Art Collection</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../menu/rs-plugin/css/settings.css" media="screen" />
 
 <!-- Bootstrap Core CSS -->
 <link href="../css1/Template/bootstrap.min.css" rel="stylesheet">
@@ -219,7 +219,7 @@ function loadPage(){
 										<input type='text'  class='input-number'  data-min='1' data-max='100' name ='quantity' id='input-quantity-$pid' value='$qty'>
 										<div class='button plus'>
 											<button type='button' class='btn btn-primary btn-number' onClick='increment_quantity($pid, $price)' data-type='plus' name ='addqty'  >
-                      <i class='fas fa-plus'></i>
+                      						<i class='fas fa-plus'></i>
 											</button>
 										</div>
 									</div>
@@ -296,7 +296,7 @@ function loadPage(){
 <script src="../js/Template/owl.carousel.min.js"></script> 
 
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
-<script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script> 
+<script type="text/javascript" src="../menu/rs-plugin/js/jquery.tp.t.min.js"></script> 
 <script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script> 
 <script src="../js/Template/main.js"></script> 
 <script src="../js/Template/main.js"></script>
