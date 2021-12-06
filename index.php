@@ -2,8 +2,7 @@
 session_start();
 require('product_controller.php');
 $productsinitial = select_all_products_controller();
-$products=array_slice($productsinitial,0,6)
-
+$products=array_slice($productsinitial,0,6);
 ?>
 
 <!DOCTYPE html>
