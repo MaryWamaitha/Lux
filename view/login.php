@@ -139,6 +139,12 @@
                         <a href="#.">Forgot Password</a>
                       </div>
                     </li>
+
+                    <li class="col-md-4">
+                      <div class="checkbox margin-0 margin-top-20 text-right">
+                        <a href="register.php">Don't have an account? Sign Up here</a>
+                      </div>
+                    </li>
                   </ul>
                 </form>
 

@@ -91,7 +91,19 @@ if (isset($_SESSION['ID'] )) {
                   foreach ($cart as $x){
                     $pid=$x['p_id'];
                     $item_name=$x['product_name'];
-                    $price=$x['product_price'];
+                    $size=$x['size'];
+                    if ($size==1){
+                      $price=1500;
+                      $type='25*18';
+                    }
+                    elseif ($size==2){
+                      $price=4000;
+                      $type='36*24';
+                    }
+                    else{
+                      $price=10000;
+                      $type='4*3';
+                    }
                     $email=$_SESSION['email'];
                     $qty=$x['qty'];
                     $item_total=item_total($price,$qty);
@@ -105,7 +117,7 @@ if (isset($_SESSION['ID'] )) {
                                   <form id= 'paymentForm' >
                                       
                                         <!-- SUB TOTAL -->
-                                        <p class='all-total' id='amount'>TOTAL COST <span> Ksh  $sum </span></p>
+                                        <p class='all-total' id='amount'>Amount Due <span> Ksh  $sum </span></p>
                                       
                                       </div>
                                       <input class='form-control' type='hidden'  name='email' id='email' value= $email >
