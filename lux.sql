@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2021 at 03:04 PM
+-- Generation Time: Dec 06, 2021 at 09:57 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -106,6 +106,7 @@ CREATE TABLE `customers` (
   `customer_pass` varchar(150) NOT NULL,
   `customer_contact` varchar(15) DEFAULT NULL,
   `customer_address` varchar(255) DEFAULT NULL,
+  `secret question1` text DEFAULT NULL,
   `role` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -113,15 +114,16 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`customer_id`, `customer_Fname`, `customer_Lname`, `customer_email`, `customer_pass`, `customer_contact`, `customer_address`, `role`) VALUES
-(1, 'Mary', 'Wamaitha', 'mary.wamaitha@ashesi.edu.oh', '$2y$10$XE.04Wn39Q/R8On.rVFQ1uJHGy7CR5XQ2/fD1a7pLDBLXeeDTItlK', '', '', 0),
-(2, '', '', 'mary.wamaitha@ashesi.edu.km', '$2y$10$R7vJZGgLhDkfSxm2JbbM2.bKFmkTbBNEy3LsmqVIUaLm/kvSQcm.C', '', '', 0),
-(3, 'Mary', 'Wamaitha', 'marywamaitha019@gmail.com', '$2y$10$IWz5H5DBMVoBisrJa4r9Eu1An26KlPnuVEcfSeMuF7RIEjO7bVJyW', '', '', 0),
-(1000, 'Mercy', 'Mukiri', 'mercy.mukiri@gmail.com', '$2y$10$dp0gaRYmhH6Kk2JyFbwyF.MIg6ZhoB8G7O5tDYDE01Q22W/QfntKy', '', '', 0),
-(1001, 'Perfect', 'Gift', 'perfectgift@gmail.com', '$2y$10$H.tMWa6aqmk/WmCQ6DeTm.NTgcv8i7ivSzPASfU5lCogog0bGsmry', '', '', 0),
-(1002, 'Perfect', 'Gift', 'perfect.gift@gmail.com', '$2y$10$HGbvomkJrvkDdvRUpT.4WOpJdWzNYEmBvdup.KAVgZOzcp3Yahd9O', NULL, NULL, 1),
-(1003, 'Mary', 'Wamaitha', 'marywamaitha1@gmail.com', '$2y$10$D3G288NbKgECTOvyy7TybeslVpQhiff3dxess0p6Sj.zYGtsQZtWC', '0701950103', NULL, 0),
-(1004, 'admin', 'lux', 'luxartgallery@gmail.com', '$2y$10$7xugXUSqxj8eTwLeXVIQL.VlLJBOUb8WXuPcXIWh6sGxZM94CKLpG', NULL, NULL, 1);
+INSERT INTO `customers` (`customer_id`, `customer_Fname`, `customer_Lname`, `customer_email`, `customer_pass`, `customer_contact`, `customer_address`, `secret question1`, `role`) VALUES
+(1, 'Mary', 'Wamaitha', 'mary.wamaitha@ashesi.edu.oh', '$2y$10$XE.04Wn39Q/R8On.rVFQ1uJHGy7CR5XQ2/fD1a7pLDBLXeeDTItlK', '', '', NULL, 0),
+(2, '', '', 'mary.wamaitha@ashesi.edu.km', '$2y$10$R7vJZGgLhDkfSxm2JbbM2.bKFmkTbBNEy3LsmqVIUaLm/kvSQcm.C', '', '', NULL, 0),
+(3, 'Mary', 'Wamaitha', 'marywamaitha019@gmail.com', '$2y$10$IWz5H5DBMVoBisrJa4r9Eu1An26KlPnuVEcfSeMuF7RIEjO7bVJyW', '', '', NULL, 0),
+(1000, 'Mercy', 'Mukiri', 'mercy.mukiri@gmail.com', '$2y$10$dp0gaRYmhH6Kk2JyFbwyF.MIg6ZhoB8G7O5tDYDE01Q22W/QfntKy', '', '', NULL, 0),
+(1001, 'Perfect', 'Gift', 'perfectgift@gmail.com', '$2y$10$H.tMWa6aqmk/WmCQ6DeTm.NTgcv8i7ivSzPASfU5lCogog0bGsmry', '', '', NULL, 0),
+(1002, 'Perfect', 'Gift', 'perfect.gift@gmail.com', '$2y$10$HGbvomkJrvkDdvRUpT.4WOpJdWzNYEmBvdup.KAVgZOzcp3Yahd9O', NULL, NULL, NULL, 1),
+(1003, 'Mary', 'Wamaitha', 'marywamaitha1@gmail.com', '$2y$10$D3G288NbKgECTOvyy7TybeslVpQhiff3dxess0p6Sj.zYGtsQZtWC', '0701950103', NULL, NULL, 0),
+(1004, 'admin', 'lux', 'luxartgallery@gmail.com', '$2y$10$7xugXUSqxj8eTwLeXVIQL.VlLJBOUb8WXuPcXIWh6sGxZM94CKLpG', NULL, NULL, NULL, 1),
+(1005, 'Jane', 'Njoki', 'jane@gmail.com', '', '+254701950103', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -195,7 +197,7 @@ CREATE TABLE `orderdetails` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
-  `size` int(11) NOT NULL DEFAULT 2,
+  `size` int(11) DEFAULT NULL,
   `details` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -231,7 +233,13 @@ INSERT INTO `orderdetails` (`order_id`, `product_id`, `qty`, `size`, `details`) 
 (15, 41, 1, 0, ''),
 (16, 38, 1, 0, ''),
 (17, 38, 1, 3, ''),
-(18, 38, 1, 1, '');
+(18, 38, 1, 1, ''),
+(19, 46, 1, 3, ''),
+(20, 46, 1, 2, ''),
+(21, 42, 1, 3, ''),
+(22, 37, 2, 1, ''),
+(26, 37, 1, 1, ''),
+(24, 8, 1, 3, 'money');
 
 -- --------------------------------------------------------
 
@@ -253,24 +261,15 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `customer_id`, `invoice_no`, `amt`, `order_date`, `order_status`) VALUES
-(1, 3, 876, '0', '2021-11-20', 'pending'),
-(2, 3, 258, '0', '2021-11-20', 'pending'),
-(3, 3, 532, '0', '2021-11-20', 'pending'),
-(4, 3, 890, '0', '2021-11-21', 'pending'),
-(5, 0, 493, '0', '2021-11-21', 'pending'),
-(6, 0, 240, '0', '2021-11-21', 'pending'),
-(7, 0, 144, '0', '2021-11-21', 'pending'),
-(8, 0, 264, '0', '2021-11-21', 'pending'),
-(9, 1000, 836, '0', '2021-11-21', 'pending'),
-(10, 1000, 700, '0', '2021-11-21', 'pending'),
-(11, 1000, 627, '0', '2021-11-21', 'pending'),
-(12, 1000, 482, '0', '2021-11-21', 'pending'),
-(13, 1000, 639, '0', '2021-11-25', 'pending'),
-(14, 1003, 604, '0', '0000-00-00', 'pending'),
-(15, 1003, 633, '3300', '2021-12-05', 'pending'),
 (16, 1003, 207, '4000', '2021-12-05', 'pending'),
 (17, 1003, 126, '10000', '2021-12-05', 'pending'),
-(18, 1003, 456, '750', '2021-12-06', 'Half Paid');
+(18, 1003, 456, '750', '2021-12-06', 'Half Paid'),
+(19, 1004, 861, '5000', '2021-12-06', 'Half Paid'),
+(20, 1004, 702, '2000', '2021-12-06', 'Half Paid'),
+(21, 1004, 523, '10000', '2021-12-06', 'Fully Paid'),
+(22, 1004, 851, '3000', '2021-12-06', 'Fully Paid'),
+(23, 1004, 390, '1500', '2021-12-06', 'Fully Paid'),
+(25, 1004, 159, '1500', '2021-12-06', 'Fully Paid');
 
 -- --------------------------------------------------------
 
@@ -304,7 +303,12 @@ INSERT INTO `payment` (`pay_id`, `amt`, `customer_id`, `order_id`, `currency`, `
 (10, 600, 1000, 11, 'GHC', '2021-11-21'),
 (11, 13800, 1000, 12, 'GHC', '2021-11-21'),
 (12, 1, 1000, 13, 'GHC', '2021-11-25'),
-(13, 750, 1003, 18, 'GHC', '2021-12-06');
+(13, 750, 1003, 18, 'GHC', '2021-12-06'),
+(14, 5000, 1004, 19, 'GHC', '2021-12-06'),
+(15, 2000, 1004, 20, 'GHC', '2021-12-06'),
+(16, 10000, 1004, 21, 'GHC', '2021-12-06'),
+(17, 3000, 1004, 22, 'GHC', '2021-12-06'),
+(18, 1500, 1004, 26, 'GHC', '2021-12-06');
 
 -- --------------------------------------------------------
 
@@ -337,6 +341,17 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_cat`, `product_pr
 (46, 'Nomad ', 1, 3000, ''),
 (47, 'Girrafes', 12, 3000, 'Giraffes in Savanna'),
 (48, 'Elephants crossing River', 12, 3000, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questions`
+--
+
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL,
+  `question` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -415,6 +430,12 @@ ALTER TABLE `products`
   ADD KEY `product_cat` (`product_cat`);
 
 --
+-- Indexes for table `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -428,7 +449,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -440,7 +461,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1006;
 
 --
 -- AUTO_INCREMENT for table `image`
@@ -452,19 +473,25 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `pay_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
