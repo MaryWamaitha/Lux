@@ -100,9 +100,9 @@
                   <li>
                     <h6>HELLO! </h6>
                   </li>
-                  <li><a href="cart.php">MY CART</a></li>
+                  <li><a href="view/cart.php">MY CART</a></li>
                   
-                  <li><a href="login.php">LOG IN</a></li>
+                  <li><a href="view/login.php">LOG IN</a></li>
                 </ul>
              
               

@@ -93,7 +93,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="cart.php">MY CART</a></li>
                   <li><a href="user.php">ACCOUNT INFO</a></li>
-                  <li><a href="logout.php">LOG OUT</a></li>
+                  <li><a href="../Actions/logout.php">LOG OUT</a></li>
                 </ul>
              
                 <li><p><?php echo $_SESSION["name"]; ?> </p> </li>
