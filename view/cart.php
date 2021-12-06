@@ -154,7 +154,7 @@ function loadPage(){
 					<?php
 						if ($cartlen ==0){
 							echo "	<div class='buttonhead'>
-							<a href='loggedindex.php' class='btn5'>You don't have any items in your cart. Click here to start shopping</a>
+							<a href='shop.php' class='btn5'>You don't have any items in your cart. Click here to start shopping</a>
 						</div>"; } else {
 							$sum=0; ?>
 					<table class="table shopping-summery">

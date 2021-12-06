@@ -2,14 +2,14 @@
 session_start();
 
 if (isset($_SESSION['ID'] )) {
-require('../Controllers/cart_controller.php');
-require('../Classes/product_functions.php');
-$custID=$_SESSION["ID"];
-$ip_addr = $_SERVER["REMOTE_ADDR"]; 
-$updateID= update_ID_controller($custID,$ip_addr);
-$cart=select_cart_by_cid_controller($custID);
-$itemcount=count($cart);
-$customer=select_customer_controller($custID);
+  require('../Controllers/cart_controller.php');
+  require('../Classes/product_functions.php');
+  $custID=$_SESSION["ID"];
+  $ip_addr = $_SERVER["REMOTE_ADDR"]; 
+  $updateID= update_ID_controller($custID,$ip_addr);
+  $cart=select_cart_by_cid_controller($custID);
+  $itemcount=count($cart);
+  $customer=select_customer_controller($custID);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ $customer=select_customer_controller($custID);
 <script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
 
 <!-- JavaScripts -->
-<script src="../JS/Template/modernizr.js"></script>
+<script src="../js/Template/modernizr.js"></script>
 
 <!-- Online Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>

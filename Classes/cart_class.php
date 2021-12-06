@@ -95,7 +95,7 @@ function update_ID($CID,$ip_add ){
 	}
 
 	function select_customer($CID){
-		return $this->fetchOne("select * from orders join customers on orders.customer_id = customers.customer_id where customers.customer_id= '$CID'");
+		return $this->fetchOne("select * from cart join customers on cart.c_id = customers.customer_id where customers.customer_id= '$CID'");
 
 	}
 
