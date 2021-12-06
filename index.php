@@ -13,7 +13,7 @@ $products=array_slice($productsinitial,0,6)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>N. Agenecy</title>
+    <title>ux Jade Collection</title>
     
     <meta name="description" content="N.Agency - Responisve Landing Page for Agency">
     <meta name="keywords" content="">
@@ -33,7 +33,7 @@ $products=array_slice($productsinitial,0,6)
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     
      <!-- Bootstrap Core CSS -->
-     <link href="css1/Template/bootstrap.min.css" rel="stylesheet">
+    <link href="css1/Template/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href='css1/Template/font-awesome.min.css' rel="stylesheet" type="text/css">
@@ -284,12 +284,11 @@ $products=array_slice($productsinitial,0,6)
                     <h5 class="testimonial-author">Jack Doe - Inka Design</h5>
                 </div>
 
-</div> <!-- /#owl-testimonials -->
-
-</section>
+        </div> <!-- /#owl-testimonials -->
+    </section>
 <!-- End Testimonial -->
 <!--======= FOOTER =========-->
-<?php include_once("view/footer.php") ?>
+<?php include_once("view/footer.php"); ?>
 
     
 
