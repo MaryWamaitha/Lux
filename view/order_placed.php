@@ -105,6 +105,7 @@ $customer=select_order_user_controller($custID,$order_id);
                                 <li><strong>Customer details</strong></li>
                                 <li><?php echo $customer['customer_Fname']; echo '  ' ; echo $customer['customer_Lname']; ?></li>
                                 <li><?php echo $customer['customer_email']; ?></li>
+                                <li><?php echo $customer['customer_contact']; ?></li>
     
                             </ul>
                         </div>
