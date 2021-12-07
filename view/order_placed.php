@@ -95,6 +95,7 @@ $customer=select_order_user_controller($custID,$order_id);
                                    
                                     <li><strong>Invoice No</strong> <?php echo $customer['invoice_no']; ?></li>
                                     <li><strong>Order Date:</strong> <?php echo $customer['order_date']; ?></li>
+                                    <li>Thank you for placing an order with Lux Jade Collection. The painting will be ready in 3-5 days. We will be in touch when ready. </li>
                                    
                                 </ul>
                             </div>
