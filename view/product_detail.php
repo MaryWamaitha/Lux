@@ -47,6 +47,7 @@ $product_image=$firstItem['image_path'];
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
+<link rel="shortcut icon" href="../images/logo5.png">
 
 
 <!-- HTML5 Shim and Respond.js IE8 qsupport of HTML5 elements and media queries -->

@@ -19,7 +19,7 @@ if (isset($_SESSION['ID'] )) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+<title>Lux Jade Collection</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
@@ -42,8 +42,7 @@ if (isset($_SESSION['ID'] )) {
 <!-- Online Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
-
-
+<link rel="shortcut icon" href="../images/logo5.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
 
 

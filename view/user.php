@@ -33,6 +33,8 @@ if (isset($_SESSION['ID'] )) {
 
   <!-- Online Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="../images/logo5.png">
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>

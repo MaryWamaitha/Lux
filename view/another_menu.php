@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+<title>Lux Jade Collection</title>
 
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
@@ -22,6 +22,9 @@
 <link href='../css1/Template/style.css' rel='stylesheet'>
 <link href='../css1/Template/responsive.css' rel='stylesheet'>
 <link href='../css1/Template/ionicons.min.css' rel='stylesheet'>
+ <!-- Favicons -->
+<link rel="shortcut icon" href="../images/logo5.png">
+
 
 <script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
 

@@ -26,7 +26,7 @@ $customer=select_order_user_controller($custID,$order_id);
 
 <!-- Custom CSS -->
 <link href='../css/Template/font-awesome.min.css' rel="stylesheet" type="text/css">
-
+<link rel="shortcut icon" href="../images/logo5.png">
 <link href='../css/Template/main.css' rel='stylesheet'>
 <link href='../css/Template/style.css' rel='stylesheet'>
 <link href='../css/Template/responsive.css' rel='stylesheet'>

@@ -15,14 +15,14 @@ session_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>Lux Art Collection</title>
+<title>Lux Jade Collection</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="../menu/rs-plugin/css/settings.css" media="screen" />
 
 <!-- Bootstrap Core CSS -->
 <link href="../css1/Template/bootstrap.min.css" rel="stylesheet">
-
+<link rel="shortcut icon" href="../images/logo5.png">
 <!-- Custom CSS -->
 <link href='../css1/Template/font-awesome.min.css' rel="stylesheet" type="text/css">
 

@@ -22,6 +22,7 @@
 
   <!-- JavaScripts -->
   <script src="../js/Template/modernizr.js"></script>
+  <link rel="shortcut icon" href="../images/logo5.png">
 
   <!-- Online Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">

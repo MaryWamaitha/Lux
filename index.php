@@ -18,11 +18,8 @@ $products=array_slice($productsinitial,0,6);
     <meta name="keywords" content="">
     <meta name="author" content="tabthemes">
     
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+   <!-- Favicons -->
+   <link rel="shortcut icon" href="images/logo5.png">
     
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />

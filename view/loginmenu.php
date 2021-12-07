@@ -22,6 +22,7 @@
 <link href='../css1/Template/style.css' rel='stylesheet'>
 <link href='../css1/Template/responsive.css' rel='stylesheet'>
 <link href='../css1/Template/ionicons.min.css' rel='stylesheet'>
+<link rel="shortcut icon" href="../images/logo5.png">
 
 <script src="https://kit.fontawesome.com/bb731240c4.js" crossorigin="anonymous"></script>
 
