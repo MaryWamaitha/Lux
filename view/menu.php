@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,16 +71,15 @@
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"><i class="fa fa-navicon"></i></span> </button>
           </div>
+
+          <!-- Form -->
+        
           
            <!-- NAV -->
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
               <li > <a href="../index.php">Home</a></li>
-              <li> <a href="about.php">About </a> </li>
               <li> <a href="shop.php">Shop </a> </li>
-              
-           
-            
               <li> <a href="contact.php"> contact</a> </li>
             </ul>
           </div>
@@ -97,35 +97,19 @@
                 </ul>
              
                 <li><p><?php echo $_SESSION["name"]; ?> </p> </li>
-              <!-- USER BASKET -->
-              <li class="dropdown user-basket"> <a href="cart.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i> </a>
-                <ul class="dropdown-menu">
-                  <li>
-                   
-                  <li class="margin-0">
-                    <div class="row">
-                      <div class="col-xs-6"> <a href="cart.php" class="btn" >VIEW CART</a></div>
-                      <div class="col-xs-6 "> <a href="checkout.php" class="btn" >CHECK OUT</a></div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-                      
-                      
-                    
-              
-              <!-- SEARCH BAR -->
-
-              <li class="dropdown"> <a href="javascript:void(0);" class="search-open"><i class='fas fa-search'></i></a>
-                <div class="search-inside animated bounceInUp"> <i class="icon-close search-close"></i>
-                  <div class="search-overlay"></div>
-                  <div class="position-center-center">
-                    <div class="search">
-                    <form action ='search_results.php' method='post'>
-                        <input type="search" placeholder="Search for art" name='search' id='search' required>
-                        <button type="submit"><i class='fas fa-search'></i></button>
-                      </form>
-                    </div>
+                    <!-- USER BASKET -->
+                    <li class="dropdown user-basket"> <a href="cart.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i> </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                        
+                        <li class="margin-0">
+                          <div class="row">
+                            <div class="col-xs-6"> <a href="cart.php" class="btn" >VIEW CART</a></div>
+                            <div class="col-xs-6 "> <a href="checkout.php" class="btn" >CHECK OUT</a></div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
                     <li > <a href="../Actions/logout.php"><i class="fas fa-sign-out-alt"></i></a>
                   </div>
                 </div>

@@ -111,27 +111,7 @@
                   </li>
                 </ul>
               </li>
-                      
-                      
-                    
-              
-              <!-- SEARCH BAR -->
-
-              <li class="dropdown"> <a href="javascript:void(0);" class="search-open"><i class='fas fa-search'></i></a>
-                <div class="search-inside animated bounceInUp"> <i class="icon-close search-close"></i>
-                  <div class="search-overlay"></div>
-                  <div class="position-center-center">
-                    <div class="search">
-                    <form action ='search_results.php' method='post'>
-                        <input type="search" placeholder="Search for art" name='search' id='search' required>
-                        <button type="submit"><i class='fas fa-search'></i></button>
-                      </form>
-                    </div>
-                    <li > <a href="Actions/logout.php"><i class="fas fa-sign-out-alt"></i></a>
-                  </div>
-                </div>
-              </li>
-            </ul>
+              <li > <a href="Actions/logout.php"><i class="fas fa-sign-out-alt"></i></a>
           </div>
         </nav>
       </div>

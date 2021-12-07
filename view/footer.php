@@ -18,7 +18,7 @@
 					<div class="col-md-12 text-center">
 						<h2 class="footer-heading"><a href="#" class="logo">Lux Jade Collection</a></h2>
             <h4 style='color:white' ><span> <i class="fas fa-phone-alt"  style='color:white'>  </i> +254 729093709 </span>  </h4>
-            <h4 style='color:white' ><span> <i class="fas fa-envelope"  style='color:white'>  </i> luxartgallery@gmail.com </span>  </h4>
+            <h4 style='color:white' ><span> <i class="fas fa-envelope"  style='color:white'>  </i> hkarani188@gmail.com </span>  </h4>
             <br>
 						<p class="menu">
 							<a href="index.php">Home </a>

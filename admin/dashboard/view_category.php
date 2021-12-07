@@ -54,7 +54,7 @@ $catcount = select_count_categories_controller();
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="../index.html">
+      <a class="navbar-brand pt-0" href="index.php">
         <img src="../../images/logo5.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
@@ -94,8 +94,8 @@ $catcount = select_count_categories_controller();
         <div class="navbar-collapse-header d-md-none">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="../index.html">
-                <img src="assets/img/brand/blue.png">
+              <a href="index.php">
+                <img src="../../images/logo5.png">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -136,7 +136,7 @@ $catcount = select_count_categories_controller();
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../../index.php">
+            <a class="nav-link " href="index.php">
             <i class="fas fa-users"></i> Customer View
             </a>
           </li>
@@ -154,7 +154,7 @@ $catcount = select_count_categories_controller();
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Categories</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="index.php">Categories</a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">

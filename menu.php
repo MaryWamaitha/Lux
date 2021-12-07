@@ -80,12 +80,8 @@
            <!-- NAV -->
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
-              <li > <a href="../index.php">Home</a></li>
-              <li> <a href="about.php">About </a> </li>
+              <li > <a href="index.php">Home</a></li>
               <li> <a href="view/shop.php">Shop </a> </li>
-              
-           
-            
               <li> <a href="view/contact.php"> contact</a> </li>
             </ul>
           </div>
@@ -118,26 +114,6 @@
                     </div>
                   </li>
                 </ul>
-              </li>
-                      
-                      
-                    
-              
-              <!-- SEARCH BAR -->
-
-              <li class="dropdown"> <a href="javascript:void(0);" class="search-open"><i class='fas fa-search'></i></a>
-                <div class="search-inside animated bounceInUp"> <i class="icon-close search-close"></i>
-                  <div class="search-overlay"></div>
-                  <div class="position-center-center">
-                    <div class="search">
-                    <form action ='search_results.php' method='post'>
-                        <input type="search" placeholder="Search for art" name='search' id='search' required>
-                        <button type="submit"><i class='fas fa-search'></i></button>
-                      </form>
-                    </div>
-                  
-                  </div>
-                </div>
               </li>
             </ul>
           </div>

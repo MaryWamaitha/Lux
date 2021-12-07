@@ -81,13 +81,18 @@ $products= select_all_products_controller();
     <!-- Start Portfolio -->
     <section id="portfolio" class="p-top-80 p-bottom-80">
         <div class="container">
-
+           
             <!-- Portfolio-filter -->
             <ul class="pf-filter pf-filter-gray text-center list-inline">
                 <li><a href="#" data-filter="*" class="iso-active iso-button">All</a></li>
                 <li><a href="#" data-filter=".Landscapes" class="iso-button">Landscape and Nature</a></li>
                 <li><a href="#" data-filter=".Animals" class="iso-button">Animals</a></li>
                 <li><a href="#" data-filter=".Potraits" class="iso-button">Potraits and People</a></li>
+                <form method="get" action="search_results.php" >
+                    <input type="search" placeholder="Search" name='kword' id='kword' required>
+                    <button type="submit" name='search'><i class='fas fa-search'></i></button>
+                </form> 
+
             </ul>          
 
             <!-- Portfolio -->
@@ -145,9 +150,9 @@ $products= select_all_products_controller();
                 <div class="col-xs-12 c2a-content text-center">                   
                     <!-- Text -->
                     <h2 class="wow fadeInDown" data-wow-delay="0.3s">Want to get your own personalized painting?</h2>
-                    <p class="m-bottom-30 wow fadeInDown" data-wow-delay="0.4s">Click the link below and tell us more about what you want and we will deliver</p>
+                    <p class="m-bottom-30 wow fadeInDown" data-wow-delay="0.4s">Call or WhatsApp us at</p>
                     <!-- Button -->
-                    <a href="custom.php" class="btn btn-main btn-theme wow fadeInUp" data-wow-delay="0.5s">Get Custom Painting</a>            
+                    <a href="#" class="btn btn-main btn-theme wow fadeInUp" data-wow-delay="0.5s">+254 729093709</a>            
                 </div> <!-- /.col -->
                 
             </div>  <!-- /.row -->          
@@ -163,12 +168,11 @@ $products= select_all_products_controller();
 					<div class="col-md-12 text-center">
 						<h2 class="footer-heading"><a href="#" class="logo">Lux Jade Collection</a></h2>
                         <h4 style='color:white' ><span> <i class="fas fa-phone-alt"  style='color:white'>  </i> +254 729093709 </span>  </h4>
-                        <h4 style='color:white' ><span> <i class="fas fa-envelope"  style='color:white'>  </i> luxartgallery@gmail.com </span>  </h4>
+                        <h4 style='color:white' ><span> <i class="fas fa-envelope"  style='color:white'>  </i> hkarani188@gmail.com </span>  </h4>
                         <br>
 						<p class="menu">
 							<a href="index.php">Home </a>
 							<a href="shop.php">Shop </a>
-							<a href="custom.php">Custom painting  </a>
 							<a href="contact.php">Contact  </a>
 						</p>
 						<ul class="ftco-footer-social p-0">
