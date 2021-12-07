@@ -82,6 +82,13 @@ $qty=$_GET['qty'];
             <!-- Popular Images Slider -->
             <form action = "../Actions/cart_action.php" method ="get">
             <div class="col-md-7"> 
+            <?php
+                  
+                  if (isset($_GET["alert"]) && $_GET["alert"]==1)
+                  echo " <div class='alert alert-danger' role='alert'> You have successfully added 1 $item_name  to cart</div>" ;
+                  if (isset($_GET["alert"]) && $_GET["alert"]==2)
+                  echo " <div class='alert alert-danger' role='alert'> You now have $qty $item_name in your cart</div>" ;
+              ?>
               <?php 
               
               echo "
@@ -143,15 +150,6 @@ $qty=$_GET['qty'];
                     <li><a href="https://www.facebook.com/luxJadeCollection/"><i class="fab fa-facebook"></i> </a></li>
                     <li><a href="https://www.instagram.com/lux_jade_collection/?hl=en"><i class="fab fa-instagram"></i></a></li>
                   </ul>
-                
-                  <?php
-                  
-                    if (isset($_GET["alert"]) && $_GET["alert"]==1)
-                    echo " <div class='alert alert-danger' role='alert'> You have successfully added 1 item to cart</div>" ;
-                    if (isset($_GET["alert"]) && $_GET["alert"]==2)
-                    echo " <div class='alert alert-danger' role='alert'> You now have $qty $item_name in your cart</div>" ;
-                ?>
-                
                 </div>
               
           </div>
