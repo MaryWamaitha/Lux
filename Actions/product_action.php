@@ -47,12 +47,11 @@ if(isset($_POST['saveproduct'])){
                             if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file)) {
                                 $result = add_product_controller($category,$title,$price,$desc);
                                 if ($result=== true){
-                                    echo "result works";
                                     $recent_product = get_last_product_controller();
                                     $image=$target_file;
                                     $add_image=add_image_controller($recent_product['currentProduct'],$image);
                                     if ($add_image===true){
-                                        var_dump( $add_image);
+                                        header("Location: ../admin/dashboard/view_products.php");
                                     } else {
                                         header("Location: ../admin/dashboard/add_products.php?error=5");
                                     }
@@ -120,6 +119,7 @@ if(isset($_POST['editproduct'])){
     $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    echo $uploadOk;
 
 // Check if image file is a actual image or fake image
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
