@@ -2,7 +2,7 @@
 session_start();
 
 require('../Controllers/cart_controller.php');
-if (isset($_GET['payment'])&($_GET['payment']=='delivery')){
+if (isset($_GET['payment']) AND ($_GET['payment']=='delivery')){
     // get form values
     $custID=$_SESSION["ID"];
     $invoice_no = floor(mt_rand(100, 1000));
@@ -111,8 +111,8 @@ if(isset($decodedResponse->data->status) && $decodedResponse->data->status === '
     } else{
         header("Location: ../view/payment.php?error=1");
     }
-
-}
+    
+} 
 
 
 
