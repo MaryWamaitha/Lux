@@ -47,7 +47,7 @@ if(isset($_POST['saveproduct'])){
                             if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file)) {
                                 $result = add_product_controller($category,$title,$price,$desc);
                                 if ($result=== true){
-                                    var_dump($result);
+                                    echo "result works";
                                     $recent_product = get_last_product_controller();
                                     $image=$target_file;
                                     $add_image=add_image_controller($recent_product['currentProduct'],$image);
