@@ -42,9 +42,9 @@ function update_ID($CID,$ip_add ){
 		return $this->fetchOne("select * from cart where p_id='$p_id' ");
 	}
 //updatiing the quantity
-	function update_quantity($PID, $quantity){
+	function update_quantity($PID, $quantity,,$ip_add){
 		// return true or false
-		return $this->query("update cart  set qty='$quantity' where p_id = '$PID'");
+		return $this->query("update cart  set qty='$quantity' where p_id = '$PID' AND ip_add = '$ip_add'");
 	}	
 //deleting product from cart
 	function delete_product_fromcart($id){

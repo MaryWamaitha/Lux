@@ -34,7 +34,7 @@ if(isset($_GET['cart'])){
        
     } else {
         $quantity = $product['qty']+$qty;
-        $update=update_quantity_controller($PID, $quantity);
+        $update=update_quantity_controller($PID, $quantity,$ip_add);
         header("Location: ../view/product_added.php?qty=$quantity&&PID=$PID&&alert=2");
     }
 

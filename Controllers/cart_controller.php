@@ -73,11 +73,11 @@ function select_images_controller($pid){
 }
 
 //updating quantity
-function update_quantity_controller($PID, $quantity){
+function update_quantity_controller($PID, $quantity,$ip_add){
     // create an instance of the category class
     $cart_instance = new Cart();
     // call the method from the class
-    return $cart_instance->update_quantity($PID, $quantity);
+    return $cart_instance->update_quantity($PID, $quantity,$ip_add);
 
 
 }
