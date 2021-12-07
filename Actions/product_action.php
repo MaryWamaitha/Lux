@@ -9,7 +9,7 @@ if(isset($_POST['saveproduct'])){
     $desc = $_POST['desc'];
     $price = $_POST['price'];
  
-
+    echo $price,
     // File upload path
     $target_dir='../images/Products/';
     $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
