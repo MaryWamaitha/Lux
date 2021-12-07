@@ -2,7 +2,7 @@
 session_start();
 
 require('../Controllers/cart_controller.php');
-if (isset($_GET['payment']) AND ($_GET['payment']=='delivery')){
+if (isset($_GET['delivery'])){
     // get form values
     $custID=$_SESSION["ID"];
     $invoice_no = floor(mt_rand(100, 1000));
@@ -32,7 +32,8 @@ if (isset($_GET['payment']) AND ($_GET['payment']=='delivery')){
             header("Location: ../view/checkout.php?error=3");
         }
 } else {
-    // initialize a client url which we will use to send the reference to the paystack server for verification
+    
+// initialize a client url which we will use to send the reference to the paystack server for verification
 $curl = curl_init();
 
 // set options for the curl session insluding the url, headers, timeout, etc

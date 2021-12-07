@@ -10,7 +10,7 @@ if (isset($_SESSION['ID'] )) {
     $custID=$_SESSION["ID"];
     $cart=select_cart_by_cid_controller($custID);
     if ($payment=='delivery'){
-      header("Location: ../Actions/payment_action.php?payment='delivery'&amount=$cost");
+      header("Location: ../Actions/payment_action.php?delivery='delivery'&amount=$cost");
       } elseif($payment=='half'){
         $sum=$cost/2;
       } else {
