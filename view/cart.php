@@ -152,10 +152,6 @@ function loadPage(){
 				<div class="col-12">
 					<!-- Shopping Summery -->
 					<?php
-						if ($cartlen ==0){
-							echo "	<div class='buttonhead'>
-							<a href='shop.php' class='btn5'>You don't have any items in your cart. Click here to start shopping</a>
-						</div>"; } else {
 							$sum=0; ?>
 					<table class="table shopping-summery">
 						<thead>
@@ -262,7 +258,7 @@ function loadPage(){
 										<a href="checkout.php" class="btn">Checkout</a>
 										<a href="../index.php" class="btn">Continue shopping</a>
 									</div>
-									<?php } ?>
+									
 								</div>
 							</div>
 						</div>

@@ -23,7 +23,6 @@
 						<p class="menu">
 							<a href="index.php">Home </a>
 							<a href="shop.php">Shop </a>
-							<a href="custom.php">Custom painting  </a>
 							<a href="contact.php">Contact  </a>
 						</p>
 						<ul class="ftco-footer-social p-0">
