@@ -1,6 +1,6 @@
 <?php
 
-require('../Controllers/product_Controller.php');
+require('../Controllers/product_controller.php');
 if(isset($_GET['search'])){
 $kword= $_GET['kword'];
 //searches if search term matches any of the titles, keywords, description etc
