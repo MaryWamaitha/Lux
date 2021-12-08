@@ -1,11 +1,13 @@
 <?php 
 require('../Controllers/cart_controller.php');
+
 session_start();
 $custID = $_SESSION['ID'];
 $order_id = $_GET['order_id'];
 $order = select_order_controller($order_id);
 $order_details = select_orderDetails_controller($order_id);
 $customer=select_order_user_controller($custID,$order_id);
+require('../Classes/product_functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,7 @@ $customer=select_order_user_controller($custID,$order_id);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+<title>Lux Jade Collection</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
@@ -95,7 +97,7 @@ $customer=select_order_user_controller($custID,$order_id);
                                    
                                     <li><strong>Invoice No</strong> <?php echo $customer['invoice_no']; ?></li>
                                     <li><strong>Order Date:</strong> <?php echo $customer['order_date']; ?></li>
-                                    <li>Thank you for placing an order with Lux Jade Collection. The painting will be ready in 3-5 days. We will be in touch when ready. </li>
+                                    <li>Thank you for placing an order with Lux Jade Collection. The painting will be ready in 3-5 days. <br>We will be in touch when ready. <br> Please  dont hesitate to contact us if you have any questions</li>
                                    
                                 </ul>
                             </div>
@@ -135,18 +137,8 @@ $customer=select_order_user_controller($custID,$order_id);
                                                 $path="../images/Products/";
                                                 $product_image=$path.$image_name;
                                                 $size=$x['size'];
-                                                if ($size==1){
-                                                    $price=1500;
-                                                    $type='25*18';
-                                                  }
-                                                  elseif ($size==2){
-                                                    $price=4000;
-                                                    $type='36*24';
-                                                  }
-                                                  else{
-                                                    $price=10000;
-                                                    $type='4*3';
-                                                  }  
+                                                $type=type($size);
+                                                $price=price($size);
                                                 $total=$x['qty']*$price;
                                                  ?>  
                                                 <td><?php echo $x['product_name']?></td>  
