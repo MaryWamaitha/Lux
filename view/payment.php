@@ -28,7 +28,7 @@ if (isset($_SESSION['ID'] )) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+<title>Lux Jade Collection</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
@@ -93,18 +93,8 @@ if (isset($_SESSION['ID'] )) {
                     $pid=$x['p_id'];
                     $item_name=$x['product_name'];
                     $size=$x['size'];
-                    if ($size==1){
-                      $price=1500;
-                      $type='25*18';
-                    }
-                    elseif ($size==2){
-                      $price=4000;
-                      $type='36*24';
-                    }
-                    else{
-                      $price=10000;
-                      $type='4*3';
-                    }
+                    $type=type($size);
+                    $price=price($size);
                     $email=$_SESSION['email'];
                     $qty=$x['qty'];
                     $item_total=item_total($price,$qty);

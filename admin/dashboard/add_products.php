@@ -27,6 +27,11 @@ $stocks = select_count_products_controller();
 $categories = select_all_categories_controller();
 
 session_start(); 
+if (isset($_SESSION['ID'] )) 
+{
+    if ($_SESSION['role'] == 1)
+    {
+
 
 ?>
 
@@ -269,3 +274,13 @@ session_start();
 </body>
 
 </html>
+<?php 
+ } else{
+         //Redirect to previous page
+        
+           
+         header("Location: ../../index.php");
+    }
+} else{
+    header("Location: ../../view/login.php");
+}?>

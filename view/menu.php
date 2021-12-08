@@ -125,15 +125,11 @@
   
   
 
-<script src="../js/Template/jquery-1.11.3.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="../js/Template/bootstrap.min.js"></script> 
 <script src="../js/Template/own-menu.js"></script> 
 <script src="../js/Template/jquery.lighter.js"></script> 
 <script src="../js/Template/owl.carousel.min.js"></script> 
-
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
-<script type="text/javascript" src="../menu/rs-plugin/js/jquery.tp.t.min.js"></script> 
-<script type="text/javascript" src="../menu/rs-plugin/js/jquery.tp.min.js"></script> 
 <script src="../js/Template/main.js"></script> 
 <script src="../js/Template/main.js"></script>
 </body>

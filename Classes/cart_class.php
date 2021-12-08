@@ -37,12 +37,12 @@ function update_ID($CID,$ip_add ){
 
 
 //checks if products are in cart
-	function select_product_incart($p_id){
+	function select_product_incart($p_id,$ip_add){
 		// return associative array or false
-		return $this->fetchOne("select * from cart where p_id='$p_id' ");
+		return $this->fetchOne("select * from cart where p_id='$p_id' AND ip_add = '$ip_add'");
 	}
 //updatiing the quantity
-	function update_quantity($PID, $quantity,,$ip_add){
+	function update_quantity($PID, $quantity,$ip_add){
 		// return true or false
 		return $this->query("update cart  set qty='$quantity' where p_id = '$PID' AND ip_add = '$ip_add'");
 	}	

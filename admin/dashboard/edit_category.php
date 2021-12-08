@@ -19,7 +19,11 @@
   session_start();
   require('../admin_controller.php');
   $category = select_one_category_controller($_GET['updateCategoryID']);
-  
+ 
+  if (isset($_SESSION['ID'] )) 
+  {
+      if ($_SESSION['role'] == 1){
+
 ?>
 
 <!DOCTYPE html>
@@ -211,5 +215,15 @@
 </body>
 
 </html>
+<?php 
+ } else{
+         //Redirect to previous page
+        
+           
+         header("Location: ../../index.php");
+    }
+} else{
+    header("Location: ../../view/login.php");
+}?>
 
 

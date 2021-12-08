@@ -21,6 +21,9 @@
   $images=select_images_controller($_GET['updateProductID']);
   $categories = select_all_categories_controller();
   session_start();
+  if (isset($_SESSION['ID'] )) 
+  {
+      if ($_SESSION['role'] == 1){
 ?>
 
 <!DOCTYPE html>
@@ -276,5 +279,17 @@
 </body>
 
 </html>
+<?php 
+ } else{
+         //Redirect to previous page
+        
+           
+         header("Location: ../../index.php");
+    }
+} else{
+    header("Location: ../../view/login.php");
+}?>
+
+
 
 

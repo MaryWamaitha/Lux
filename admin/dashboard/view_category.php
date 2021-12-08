@@ -17,6 +17,11 @@
 
 require('../admin_controller.php');
 // return array of all rows, or false (if it failed)
+session_start(); 
+if (isset($_SESSION['ID'] )) 
+{
+    if ($_SESSION['role'] == 1)
+    {
 $categories = select_all_categories_controller();
 $catcount = select_count_categories_controller();
 ?>
@@ -335,3 +340,11 @@ $catcount = select_count_categories_controller();
 </body>
 
 </html>
+<?php 
+ } else{
+         //Redirect to index page
+         header("Location: ../../index.php");
+    }
+} else{
+    header("Location: ../../view/login.php");
+}?>

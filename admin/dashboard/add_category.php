@@ -13,6 +13,20 @@
 =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<?php
+
+require('../admin_controller.php');
+// return array of all rows, or false (if it failed)
+
+
+session_start(); 
+if (isset($_SESSION['ID'] )) 
+{
+    if ($_SESSION['role'] == 1)
+    {
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -184,5 +198,12 @@
       });
   </script>
 </body>
-
 </html>
+<?php 
+ } else{
+         //Redirect to index page
+         header("Location: ../../index.php");
+    }
+} else{
+    header("Location: ../../view/login.php");
+}?>

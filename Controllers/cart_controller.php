@@ -54,11 +54,11 @@ function select_cart_by_cid_controller($CID){
 
 }
 
-function select_product_incart_controller($p_id){
+function select_product_incart_controller($p_id,$ip_add){
     // create an instance of the category class
     $cart_instance = new Cart();
     // call the method from the class
-    return $cart_instance->select_product_incart($p_id);
+    return $cart_instance->select_product_incart($p_id,$ip_add);
 
 
 
@@ -90,6 +90,14 @@ function delete_product_fromcart_controller($id){
 
 
 }
+
+function clear_cart_controller($CID){
+    //create instance of the cart class
+    $cart_instance = new Cart();
+    //calls method from cart class
+    return $cart_instance->clear_cart($CID);
+}
+
 
 
 
@@ -125,12 +133,6 @@ function payment_cart_controller($amount,$customer_id,$order_id,$currency,$payme
     return $cart_instance->payment_cart($amount,$customer_id,$order_id,$currency,$payment_date);
 }
 
-function clear_cart_controller($CID){
-    //create instance of the cart class
-    $cart_instance = new Cart();
-    //calls method from cart class
-    return $cart_instance->clear_cart($CID);
-}
 
 
 function select_order_controller($order_id){

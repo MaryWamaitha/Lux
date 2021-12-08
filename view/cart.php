@@ -36,8 +36,6 @@ session_start();
     <link rel="stylesheet" href="../css1/cart/magnific-popup.min.css">
 	<!-- Font Awesome -->
     <link rel="stylesheet" href="../css1/cart/font-awesome.css">
-	<!-- Fancybox -->
-	<link rel="stylesheet" href="../css1/cart/jquery.fancybox.min.css">
 	<!-- Themify Icons -->
     <link rel="stylesheet" href="../css1/cart/themify-icons.css">
 	<!-- Nice Select CSS -->
@@ -58,7 +56,7 @@ session_start();
 
 <!-- JavaScripts -->
 <script src="../js/Template/modernizr.js"></script>
-<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script>
 function increment_quantity(pid, price) {
     var inputQuantityElement = $("#input-quantity-"+pid);
@@ -127,15 +125,6 @@ function loadPage(){
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type='text/css'>
-
-
-<!-- HTML5 Shim and Respond.js IE8 qsupport of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
 </head>
 <body>
 <?php 
@@ -174,18 +163,8 @@ function loadPage(){
 								$pid=$x['product_id'];
 								$item_name=$x['product_name'];
 								$size=$x['size'];
-								if ($size==1){
-									$price=1500;
-									$type='25*18';
-								}
-								elseif ($size==2){
-									$price=4000;
-									$type='36*24';
-								}
-								else{
-									$price=10000;
-									$type='4*3';
-								}
+								$type=type($size);
+								$price=price($size);
 								$desc=$x['product_desc'];
 								$images=select_images_controller($pid);
 								$firstItem = reset($images);
@@ -285,22 +264,14 @@ function loadPage(){
   <!--======= RIGHTS =========--> 
   
 </div>
-<script src="../js/Template/jquery-1.11.3.min.js"></script> 
-<script src="../js/Template/bootstrap.min.js"></script> 
-<script src="../js/Template/own-menu.js"></script> 
-<script src="../js/Template/jquery.lighter.js"></script> 
-<script src="../js/Template/owl.carousel.min.js"></script> 
 
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
-<script type="text/javascript" src="../menu/rs-plugin/js/jquery.tp.t.min.js"></script> 
-<script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script> 
-<script src="../js/Template/main.js"></script> 
-<script src="../js/Template/main.js"></script>
+	<script src="../js/Template/bootstrap.min.js"></script> 
+	<script src="../js/Template/own-menu.js"></script> 
+	<script src="../js/Template/owl.carousel.min.js"></script> 
 
-<!-- Jquery -->
-<script src="../js/cart/jquery.min.js"></script>
-    <script src="../js/cart/jquery-migrate-3.0.0.js"></script>
-	<script src="../js/cart/jquery-ui.min.js"></script>
+	<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
+	<script src="../js/Template/main.js"></script> 
+	<script src="../js/Template/main.js"></script>
 	<!-- Popper js -->
 	<script src="../js/cart/popper.min.js"></script>
 	<!-- Bootstrap js -->

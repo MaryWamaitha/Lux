@@ -264,8 +264,8 @@ $products=array_slice($productsinitial,0,6);
 
                 <!-- === Testimonial item 1 === -->
                 <div class="testimonial-item text-center">
-                    <p class="testimonial-desc">"Residence you satisfied and rapturous certainty two. Procured outweigh as outlived so so. On in bringing graceful proposal blessing of marriage outlived. Son rent face our loud near."</p>
-                    <h5 class="testimonial-author">Jenny Doe - Star Inc</h5>
+                    <p class="testimonial-desc">"I really love the piece created. It was a nice surprise. Good work Lux"</p>
+                    <h5 class="testimonial-author">Fidelma</h5>
                 </div>
 
                 <!-- === Testimonial item 2 === -->

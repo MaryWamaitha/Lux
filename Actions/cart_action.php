@@ -22,7 +22,7 @@ if(isset($_GET['cart'])){
     $details = $_GET['details'];
     $ip_address = $_SERVER["REMOTE_ADDR"]; 
     $size = $_GET['size'];
-    $product=select_product_incart_controller($PID);
+    $product=select_product_incart_controller($PID,$ip_address);
     
     if(empty($product) ){
         $result= add_to_cart_controller($PID,$qty,$ip_address,$details,$size);
@@ -34,7 +34,7 @@ if(isset($_GET['cart'])){
        
     } else {
         $quantity = $product['qty']+$qty;
-        $update=update_quantity_controller($PID, $quantity,$ip_add);
+        $update=update_quantity_controller($PID,$quantity, $ip_address);
         header("Location: ../view/product_added.php?qty=$quantity&&PID=$PID&&alert=2");
     }
 

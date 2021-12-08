@@ -24,7 +24,11 @@ $orders = select_count_orders_controller();
 $customers = select_count_customers_controller();
 $sales = select_count_sales_controller();
 $stocks = select_count_products_controller();
-
+session_start(); 
+if (isset($_SESSION['ID'] )) 
+{
+    if ($_SESSION['role'] == 1)
+    {
 
 ?>
 
@@ -375,3 +379,13 @@ $stocks = select_count_products_controller();
 </body>
 
 </html>
+<?php 
+ } else{
+         //Redirect to previous page
+        
+           
+         header("Location: ../../index.php");
+    }
+} else{
+    header("Location: ../../view/login.php");
+}?>

@@ -3,54 +3,6 @@
 require('../Classes/product_class.php');
 
 
-//Brand
-function add_brand_controller($brand){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->add_brand($brand);
-
-}
-
-function select_brand_details_controller($brand){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->select_brand_details($brand);
-    }
-function select_all_brands_controller(){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->select_all_brands();
-    }
-function update_brand_controller($brand_id, $brand_name){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->update_one_brand($brand_id, $brand_name);
-    }
- function select_one_brand_controller($brand_id){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->select_one_brand($brand_id);
-
-
-}
-function delete_brand_controller($brand_id){
-    // create an instance of the brand class
-    $brand_instance = new Brand();
-    // call the method from the class
-    return $brand_instance->delete_brand($brand_id);
-
-
-}
-
-
-
-
-
 //Category
 
 function add_category_controller($category){

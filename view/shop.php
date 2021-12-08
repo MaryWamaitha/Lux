@@ -2,6 +2,7 @@
 session_start();
 require('../Controllers/product_controller.php');
 $products= select_all_products_controller();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
