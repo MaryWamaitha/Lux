@@ -105,9 +105,9 @@ session_start();
                 <li><a href="#" data-filter=".Landscapes" class="iso-button">Landscape and Nature</a></li>
                 <li><a href="#" data-filter=".Animals" class="iso-button">Animals</a></li>
                 <li><a href="#" data-filter=".Potraits" class="iso-button">Potraits and People</a></li>
-                <form >
-                    <input type="search" placeholder="Search" name='search' id='search' required>
-                    <button type="submit"><i class='fas fa-search'></i></button>
+                <form method="get" action="search_results.php" >
+                    <input type="search" placeholder="Search" name='kword' id='kword' required>
+                    <button type="submit" name='search'><i class='fas fa-search'></i></button>
                 </form> 
 
             </ul>          
