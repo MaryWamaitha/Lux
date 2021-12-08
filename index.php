@@ -268,18 +268,6 @@ $products=array_slice($productsinitial,0,6);
                     <h5 class="testimonial-author">Fidelma</h5>
                 </div>
 
-                <!-- === Testimonial item 2 === -->
-                <div class="testimonial-item text-center">
-                    <p class="testimonial-desc">"Excellent so to no sincerity smallness. Removal request delight if on he we. Unaffected in we by apartments astonished to decisively themselves. Offended ten old consider speaking."</p>
-                    <h5 class="testimonial-author">Kathy Doe - Service Corp</h5>
-                </div>
-
-                <!-- === Testimonial item 3 === -->
-                <div class="testimonial-item text-center">
-                    <p class="testimonial-desc">"Advanced and procured civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages."</p>
-                    <h5 class="testimonial-author">Jack Doe - Inka Design</h5>
-                </div>
-
         </div> <!-- /#owl-testimonials -->
     </section>
 <!-- End Testimonial -->
