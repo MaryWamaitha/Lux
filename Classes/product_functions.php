@@ -25,7 +25,7 @@ function type ($size){
 function price ($size){
 
 	if ($size==1){
-		$price=1500;
+		$price=0.5;
 		
 	}
 	elseif ($size==2){
